@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Dashboard - Udemy Style</title>
+    <link rel="stylesheet" href="./prof.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="./image1.png" alt="Logo" />
+        </div>
+    </header>
+
+   
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="welcome">
+            <h1>Hey,Bhavith!</h1>
+            <div class="switch">
+                <input type="checkbox" class="switch__input" id="Switch">
+                <label class="switch__label" for="Switch">
+                    <span class="switch__indicator"></span>
+                    <span class="switch__decoration"></span>
+                </label>
+            </div>
+        </section>
+        <section>
+        <div class="profile-circle"></div>
+        <div class="text-frnds">
+            <h1>
+                Bhavith's Friends
+            </h1>
+        </div>
+        </section>
+        <section>
+            <div class="friends-container">
+                <div class="friends-text">
+                    <h1>Swaraj</h1>
+                </div>
+            </div>
+        </section>        
+    </main>
+    <script>
+        const toggleSwitch = document.getElementById('Switch');
+        const body = document.body;
+    
+        // Load dark mode state from localStorage if exists
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleSwitch.checked = true;
+        }
+    
+        // Event listener to toggle dark mode
+        toggleSwitch.addEventListener('change', function() {
+            if (toggleSwitch.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark'); // Save the dark mode state
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light'); // Save the light mode state
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>

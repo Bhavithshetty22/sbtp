@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Questions</title>
+    <link rel="stylesheet" href="./physquiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Physics Quiz</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Which of the following force is the strongest force in nature?</p>
+                <input type="radio" name="q1" value="a"> a) Electromagnetic force<br>
+                <input type="radio" name="q1" value="b"> b) Nuclear force<br>
+                <input type="radio" name="q1" value="c"> c) Weak force<br>
+                <input type="radio" name="q1" value="d"> d) Gravitational force<br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Who is the Father of Experimental Physics?</p>
+                <input type="radio" name="q2" value="a"> a) Galileo<br>
+                <input type="radio" name="q2" value="b"> b) Newton<br>
+                <input type="radio" name="q2" value="c"> c) Albert Einstein<br>
+                <input type="radio" name="q2" value="d"> d) Neils Bohar<br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Which branch of science deals with nature and natural phenomena?</p>
+                <input type="radio" name="q3" value="a"> a) Biology<br>
+                <input type="radio" name="q3" value="b"> b) Sociology<br>
+                <input type="radio" name="q3" value="c"> c) Physics<br>
+                <input type="radio" name="q3" value="d"> d) Virology<br>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Atomic and molecular phenomena are dealt with by</p>
+                <input type="radio" name="q4" value="a"> a) Applied Mechanics<br>
+                <input type="radio" name="q4" value="b"> b) Quantum Mechanics<br>
+                <input type="radio" name="q4" value="c"> c) Newtonian Mechanics<br>
+                <input type="radio" name="q4" value="d"> d) Fluid Mechanics<br>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What are the steps of the scientific method?</p>
+                <input type="radio" name="q5" value="a"> a) Make an observation and create a hypothesis<br>
+                <input type="radio" name="q5" value="b"> b) Test the hypothesis and analyze results<br>
+                <input type="radio" name="q5" value="c"> c) Draw Conclusions and report the results<br>
+                <input type="radio" name="q5" value="d"> d) All of the mentioned<br>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Which of the following force is the weakest force in nature?</p>
+                <input type="radio" name="q6" value="a"> a) Gravitational force<br>
+                <input type="radio" name="q6" value="b"> b) Nuclear force<br>
+                <input type="radio" name="q6" value="c"> c) Electromagnetic force<br>
+                <input type="radio" name="q6" value="d"> d) Strong nuclear force<br>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. According to Einstein’s theory, mass and energy are related as</p>
+                <input type="radio" name="q7" value="a"> a) E = mc<br>
+                <input type="radio" name="q7" value="b"> b) E = mc²<br>
+                <input type="radio" name="q7" value="c"> c) E = m/c<br>
+                <input type="radio" name="q7" value="d"> d) E = m/c²<br>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Which of the following system matches with the SI unit system?</p>
+                <input type="radio" name="q8" value="a"> a) FPS<br>
+                <input type="radio" name="q8" value="b"> b) MKS<br>
+                <input type="radio" name="q8" value="c"> c) CGS<br>
+                <input type="radio" name="q8" value="d"> d) American system<br>
+            </div>
+
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script >
+        function calculateScore() {
+    let correctAnswers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'c',
+        q4: 'b',
+        q5: 'd',
+        q6: 'a',
+        q7: 'b',
+        q8: 'b'
+    };
+
+    let score = 0;
+    let totalQuestions = 8;
+    let form = document.getElementById('quizForm');
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let answer = form[`q${i}`].value;
+        if (answer === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    // Display result
+    let result = document.getElementById('result');
+    result.textContent = `You got ${score} out of ${totalQuestions} correct!`;
+}
+
+    </script>
+</body>
+</html>

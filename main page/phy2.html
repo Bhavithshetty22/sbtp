@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI Units Quiz</title>
+    <link rel="stylesheet" href="./physquiz.css">
+
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>SI Units Quiz</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. The number of base units for measuring physical quantities according to the SI system are ____</p>
+                <input type="radio" name="q1" value="a"> a) 1<br>
+                <input type="radio" name="q1" value="b"> b) 10<br>
+                <input type="radio" name="q1" value="c"> c) 7<br>
+                <input type="radio" name="q1" value="d"> d) 8<br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. What is the unit for measuring intensity of light?</p>
+                <input type="radio" name="q2" value="a"> a) Candela<br>
+                <input type="radio" name="q2" value="b"> b) Lightyear<br>
+                <input type="radio" name="q2" value="c"> c) Meter<br>
+                <input type="radio" name="q2" value="d"> d) Mol<br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. What is the full form of SI?</p>
+                <input type="radio" name="q3" value="a"> a) Standard International<br>
+                <input type="radio" name="q3" value="b"> b) System International<br>
+                <input type="radio" name="q3" value="c"> c) Scientific International<br>
+                <input type="radio" name="q3" value="d"> d) Science International<br>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. What is the standard unit of measurement of Force?</p>
+                <input type="radio" name="q4" value="a"> a) Newton<br>
+                <input type="radio" name="q4" value="b"> b) Joule<br>
+                <input type="radio" name="q4" value="c"> c) Meter<br>
+                <input type="radio" name="q4" value="d"> d) Newton-meter<br>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. 89 Mega Joules can also be expressed as _____</p>
+                <input type="radio" name="q5" value="a"> a) 8900 Joules<br>
+                <input type="radio" name="q5" value="b"> b) 89000000 Joules<br>
+                <input type="radio" name="q5" value="c"> c) 89000 Joules<br>
+                <input type="radio" name="q5" value="d"> d) 890000 Joules<br>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Convert 5 N to Dynes.</p>
+                <input type="radio" name="q6" value="a"> a) 500000 Dynes<br>
+                <input type="radio" name="q6" value="b"> b) 500 Dynes<br>
+                <input type="radio" name="q6" value="c"> c) 5 Dynes<br>
+                <input type="radio" name="q6" value="d"> d) 0.5 Dynes<br>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Which of the following is not a system of units?</p>
+                <input type="radio" name="q7" value="a"> a) MKS<br>
+                <input type="radio" name="q7" value="b"> b) CGS<br>
+                <input type="radio" name="q7" value="c"> c) SI<br>
+                <input type="radio" name="q7" value="d"> d) Decibel<br>
+            </div>
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. What does a Voltmeter measure?</p>
+                <input type="radio" name="q8" value="a"> a) Voltage<br>
+                <input type="radio" name="q8" value="b"> b) Current<br>
+                <input type="radio" name="q8" value="c"> c) Length<br>
+                <input type="radio" name="q8" value="d"> d) Speed<br>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. What is the unit of measurement of solid angles?</p>
+                <input type="radio" name="q9" value="a"> a) Steradians<br>
+                <input type="radio" name="q9" value="b"> b) Degrees<br>
+                <input type="radio" name="q9" value="c"> c) Radians<br>
+                <input type="radio" name="q9" value="d"> d) Grades<br>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Which of the following is a unit of temperature?</p>
+                <input type="radio" name="q10" value="a"> a) Degree<br>
+                <input type="radio" name="q10" value="b"> b) Meter<br>
+                <input type="radio" name="q10" value="c"> c) Second<br>
+                <input type="radio" name="q10" value="d"> d) Fahrenheit<br>
+            </div>
+
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateScore() {
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'a',
+        q3: 'b',
+        q4: 'a',
+        q5: 'b',
+        q6: 'a',
+        q7: 'd',
+        q8: 'a',
+        q9: 'a',
+        q10: 'd'
+    };
+
+    let score = 0;
+    let totalQuestions = 10;
+    let form = document.getElementById('quizForm');
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let answer = form[`q${i}`].value;
+        if (answer === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    // Display result
+    let result = document.getElementById('result');
+    result.textContent = `You got ${score} out of ${totalQuestions} correct!`;
+}
+    </script>
+</body>
+</html>

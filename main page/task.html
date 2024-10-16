@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Dashboard</title>
+  <link rel="stylesheet" href="task.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../login/image1.png" alt="Logo" />
+    </div>
+  
+    <nav>
+      <ul>
+        <li><a href="./physicsmain.html">Physics</a></li>
+        <li><a href="./chemmain.html">Chemistry</a></li>
+        <li><a href="./mathsmain.html">Mathematics</a></li>
+        <li><a href="./pomo.html">Pomodoro</a></li>
+      </ul>
+    </nav>
+  
+    <div class="profile-circle"></div>
+  </header>
+  
+<main>
+  <div class="container1">
+    <div class="text-center">
+     
+      <p id="quote" class="quote"></p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">
+          <h3>Add New Task</h3>
+          <p>Create a new study task</p>
+        </div>
+        <div class="card-content">
+          <div class="task-input-group">
+            <input type="text" id="newTask" class="input1" placeholder="Enter task description">
+            <select id="subjectSelect">
+              <option value="Math">Math</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Physics">Physics</option>
+            </select>
+            <button id="addTaskBtn" type="button" class="button">
+              <span class="button__text">Add Item</span>
+              <span class="button__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
+                  <line y2="19" y1="5" x2="12" x1="12"></line>
+                  <line y2="12" y1="12" x2="19" x1="5"></line>
+                </svg>
+              </span>
+            </button>
+          </div>          
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Progress Overview</h3>
+          <p>Your study task completion</p>
+        </div>
+        <div class="card-content">
+          <div class="progress-bar">
+            <div id="progress"></div>
+          </div>
+          <p id="progress-text" class="text-center"></p>
+        </div>
+      </div>
+    </div>
+      <div class="card task-list">
+        <div class="card-header">
+          <h3>Study To-Do List</h3>
+          <p>Manage your study tasks efficiently</p>
+        </div>
+        <div id="tasksContainer" class="card-content"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Tasks Completed Per Day</h3>
+          <p>Your study progress over the last 7 days</p>
+        </div>
+        <div class="card-content">
+          <canvas id="tasksChart"></canvas>
+        </div>
+      </div>
+    </div>
+    </main>
+      
+
+     
+
+    <footer class="text-center">
+      <p>Remember to take regular breaks and stay hydrated!</p>
+      <p>Need study tips? Check out our <a href="#">study guide</a>.</p>
+    </footer>
+  
+
+  <script src="task.js"></script>
+</body>
+</html>
+
+
+
+
+
+

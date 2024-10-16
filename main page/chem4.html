@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Bonding and Molecular Structure Quiz</title>
+    <link rel="stylesheet" href="chemquiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Chemical Bonding and Molecular Structure</h1>
+        <div id="quiz">
+            <div class="question">
+                <p>1. Atoms obtain octet configuration when linked with other atoms. This is said by _________</p>
+                <label><input type="radio" name="q1" value="a"> Lewis</label><br>
+                <label><input type="radio" name="q1" value="b"> Kossel</label><br>
+                <label><input type="radio" name="q1" value="c"> Langmuir</label><br>
+                <label><input type="radio" name="q1" value="d"> Sidgwick</label><br>
+            </div>
+            <div class="question">
+                <p>2. Find out the correct Lewis symbol for the atom carbon among the following options.</p>
+                <label><input type="radio" name="q2" value="a"> .C:</label><br>
+                <label><input type="radio" name="q2" value="b"> :C.</label><br>
+                <label><input type="radio" name="q2" value="c"> :C:</label><br>
+                <label><input type="radio" name="q2" value="d"> .C.</label><br>
+            </div>
+            <div class="question">
+                <p>3. What’s the group valance of atoms in the halogen family?</p>
+                <label><input type="radio" name="q3" value="a"> 2</label><br>
+                <label><input type="radio" name="q3" value="b"> 1</label><br>
+                <label><input type="radio" name="q3" value="c"> 9</label><br>
+                <label><input type="radio" name="q3" value="d"> 7</label><br>
+            </div>
+            <div class="question">
+                <p>4. Highly electropositive Alkali metals are separated from highly electronegative halogens by
+                    _________</p>
+                <label><input type="radio" name="q4" value="a"> noble gases</label><br>
+                <label><input type="radio" name="q4" value="b"> oxygen family</label><br>
+                <label><input type="radio" name="q4" value="c"> f-block elements</label><br>
+                <label><input type="radio" name="q4" value="d"> 7th period</label><br>
+            </div>
+            <div class="question">
+                <p>5. Sharing or transfer of electrons from one atom to the other to attain stable octet configuration
+                    follows _______</p>
+                <label><input type="radio" name="q5" value="a"> Duet rule</label><br>
+                <label><input type="radio" name="q5" value="b"> Triplet rule</label><br>
+                <label><input type="radio" name="q5" value="c"> Octet rule</label><br>
+                <label><input type="radio" name="q5" value="d"> Septet rule</label><br>
+            </div>
+            <div class="question">
+                <p>6. In the covalent bond, atoms share electrons to achieve octet configuration.</p>
+                <label><input type="radio" name="q6" value="a"> True</label><br>
+                <label><input type="radio" name="q6" value="b"> False</label><br>
+            </div>
+            <div class="question">
+                <p>7. Which of the following molecules doesn’t involve covalent bond?</p>
+                <label><input type="radio" name="q7" value="a"> H2O</label><br>
+                <label><input type="radio" name="q7" value="b"> CCl4</label><br>
+                <label><input type="radio" name="q7" value="c"> NaCl</label><br>
+                <label><input type="radio" name="q7" value="d"> O2</label><br>
+            </div>
+            <div class="question">
+                <p>8. Calculate the formal charge of C in CH4.</p>
+                <label><input type="radio" name="q8" value="a"> 4</label><br>
+                <label><input type="radio" name="q8" value="b"> 1</label><br>
+                <label><input type="radio" name="q8" value="c"> -4</label><br>
+                <label><input type="radio" name="q8" value="d"> 0</label><br>
+            </div>
+            <div class="question">
+                <p>9. Which of the following doesn’t follow octet rule?</p>
+                <label><input type="radio" name="q9" value="a"> CH4</label><br>
+                <label><input type="radio" name="q9" value="b"> CCl4</label><br>
+                <label><input type="radio" name="q9" value="c"> HCl</label><br>
+                <label><input type="radio" name="q9" value="d"> NO2</label><br>
+            </div>
+            <div class="question">
+                <p>10. Calculate the formal charge of the middle atom in the ozone molecule.</p>
+                <label><input type="radio" name="q10" value="a"> 1</label><br>
+                <label><input type="radio" name="q10" value="b"> -1</label><br>
+                <label><input type="radio" name="q10" value="c"> 0</label><br>
+                <label><input type="radio" name="q10" value="d"> -2</label><br>
+            </div>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function submitQuiz() {
+            const correctAnswers = {
+                q1: 'a',
+                q2: 'c',
+                q3: 'b',
+                q4: 'a',
+                q5: 'c',
+                q6: 'a',
+                q7: 'c',
+                q8: 'd',
+                q9: 'd',
+                q10: 'b'
+            };
+
+            let score = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let question in correctAnswers) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').textContent = `You got ${score} out of ${totalQuestions} correct.`;
+        }
+    </script>
+</body>
+
+</html>

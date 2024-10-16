@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Dashboard - Udemy Style</title>
+    <link rel="stylesheet" href="course.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="./image1.png" alt="Logo" />
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="./physicsmain.html">Physics</a></li>
+                <li><a href="#">Chemistry</a></li>
+                <li><a href="#">Mathematics</a></li>
+                <li><a href="./pomo.html">Pomodoro</a></li>
+            </ul>
+        </nav>
+        
+        <div class="profile-circle"></div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside>
+        <ul>
+            <li><a href="./Main.html">Dashboard</a></li>
+            <li><a href="#">My Courses</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Add Friends</a></li>
+        </ul>
+    </aside>
+    <main>
+        <section class="welcome">
+            <div class="profile-circle"></div>
+            <h1>Welcome back, Bhavith</h1>
+            <div class="switch">
+                <input type="checkbox" class="switch__input" id="Switch">
+                <label class="switch__label" for="Switch">
+                    <span class="switch__indicator"></span>
+                    <span class="switch__decoration"></span>
+                </label>
+            </div>
+        </section>
+        <section class="course-grid">
+            <div class="course-box">
+                <img src="" alt="Course 1">
+                <h2>Course 1</h2>
+                <p>Introduction to Physics</p>
+            </div>
+            <div class="course-box">
+                <img src="course2.jpg" alt="Course 2">
+                <h2>Course 2</h2>
+                <p>Chemistry Basics</p>
+            </div>
+            <div class="course-box">
+                <img src="course3.jpg" alt="Course 3">
+                <h2>Course 3</h2>
+                <p>Advanced Mathematics</p>
+            </div>
+            <div class="course-box analytics-box">
+                <h2>Analytics</h2>
+                <p>Track your progress</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const toggleSwitch = document.getElementById('Switch');
+        const body = document.body;
+    
+        // Load dark mode state from localStorage if exists
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleSwitch.checked = true;
+        }
+    
+        // Event listener to toggle dark mode
+        toggleSwitch.addEventListener('change', function() {
+            if (toggleSwitch.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark'); // Save the dark mode state
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light'); // Save the light mode state
+            }
+        });
+    </script>
+    </body>
+    </html>
