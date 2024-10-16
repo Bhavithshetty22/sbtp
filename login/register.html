@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - V Study</title>
+    <link rel="stylesheet" href="./styles1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./2097134.webp" alt="Logo">
+        <img id="title" src="./image.png"/>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./howitworks.html">How it works</a></li>
+                <li><a href="./rules.html">Rules</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="focus-room-section">
+            <h1>Register for V Study</h1>
+            <p>Join us and start your study journey today</p>
+            <div class="register-box">
+                <h2>Register</h2>
+                <form action="/register" method="POST">
+                    <div class="textbox">
+                        <input type="text" placeholder="First Name" name="first_name" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="text" placeholder="Last Name" name="last_name" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="text" placeholder="Username" name="username" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <p class="Register">Already have an account? 
+                        <a href="./login.html" style="color:blueviolet;">Login Here</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section class="why-join-section">
+            <h2>Why join VStudy</h2>
+            <p>
+            Join our virtual study platform to get a personalized study timetable based on a quick assessment, allowing you to focus on what matters most. Select classes that fit your schedule and study goals, giving you flexibility and control over your learning.
+            </p>
+            <p>
+                Stay on track with daily progress checks that keep you motivated, and connect with a community of students sharing the same journey. Together, you'll find the support and accountability needed to reach your academic goals.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

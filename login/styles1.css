@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+   
+    background-image: url('./lofi2.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-attachment: fixed; /* Ensures the background stays fixed during scroll */
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional background overlay */
+    color: #ffffff;
+    animation: fadeInBackground 2s ease-in-out; /* Background fade-in animation */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 20px;
+    animation: slideDown 1.5s ease-in-out;
+   
+   
+}
+.logo>img{
+    height: 60px;
+    width: 60px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    animation: zoomIn 1.5s ease-in-out;
+    }
+    #title {
+        width:auto; /* Ensures the image scales proportionally */
+        max-width: 100%; /* Prevents the image from exceeding its container's width */
+        height:60px; /* Ensures the height scales proportionally with the width */
+        animation: zoomIn 1.5s ease-in-out;
+    }
+
+
+    
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        animation: fadeIn 2s ease-in-out; 
+    }
+    
+    nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition for color and scale */
+        display: inline-block; /* Needed for scaling effect */
+        position: relative;
+    }
+    nav ul li a:hover {
+        color: #AF8F6F; /* Change text color on hover */
+        transform: scale(1.1); /* Slight scaling effect on hover */
+    }
+    
+    /* Animation for slide-in effect on page load */
+    @keyframes navSlideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    nav ul li {
+        animation: navSlideIn 1.5s ease-in-out; /* Apply the slide-in animation to each list item */
+    }
+    
+    /* Optional: Add a delay to make the items appear one after another */
+    nav ul li:nth-child(1) {
+        animation-delay: 0.5s;
+    }
+    nav ul li:nth-child(2) {
+        animation-delay: 0.7s;
+    }
+    nav ul li:nth-child(3) {
+        animation-delay: 0.9s;
+    }
+
+
+
+
+.focus-room-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.focus-room-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.focus-room-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-family: "Montserrat", sans-serif;
+    color:white;
+
+}
+
+.register-box {
+    width: 700px;
+    height: 700px;
+    padding: 40px;
+    border: 3px solid #ffffff1d;
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    text-align: center;
+    margin: 0 auto; /* Centers the login box */
+    margin-top: 20px; /* Adds some space above the login box */
+    animation: zoomIn 2s ease-in-out; 
+}
+.register-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color:white;
+    
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+
+}
+
+.textbox {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    background: #f2f2f2;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+.textbox input:focus {
+    background: #e0e0e0;
+}
+
+.btn {
+    width: 100%;
+    background: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #202020;
+}
+.Register{
+    position: relative;
+    top: 30px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.why-join-section {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 150px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 15px; 
+}
+
+.why-join-section h2 {
+    font-size: 30px;
+    color: #B4B4B8;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out; 
+}
+
+.why-join-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out; 
+    color: #CA8787;
+}
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+   
+    background-image: url('./lofi2.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-attachment: fixed; /* Ensures the background stays fixed during scroll */
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional background overlay */
+    color: #ffffff;
+    animation: fadeInBackground 2s ease-in-out; /* Background fade-in animation */
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+}
+.logo>img{
+    height: 60px;
+    width: 60px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    }
+    #title {
+        width:auto; /* Ensures the image scales proportionally */
+        max-width: 100%; /* Prevents the image from exceeding its container's width */
+        height:60px; /* Ensures the height scales proportionally with the width */
+    }
+
+    
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition for color and scale */
+    display: inline-block; /* Needed for scaling effect */
+    position: relative;
+}
+nav ul li a:hover {
+    color: #AF8F6F; /* Change text color on hover */
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Animation for slide-in effect on page load */
+@keyframes navSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul li {
+    animation: navSlideIn 1.5s ease-in-out; /* Apply the slide-in animation to each list item */
+}
+
+/* Optional: Add a delay to make the items appear one after another */
+nav ul li:nth-child(1) {
+    animation-delay: 0.5s;
+}
+nav ul li:nth-child(2) {
+    animation-delay: 0.7s;
+}
+nav ul li:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+
+
+.focus-room-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+.focus-room-section {
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 20px; /* Increased margin-top to move it down */
+    background-color: rgba(0, 0, 0, 0.7); /* New background color */
+    border-radius: 25px; /* Add some rounding for better visuals */
+    width:90%;
+    margin-left: 40px;
+}
+.focus-room-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    color: #A67B5B;
+   
+}
+.focus-room-section h2 {
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    color:#AAB396;
+
+    
+}
+.focus-room-section .heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:#AAB396
+   
+}
+
+.focus-room-section .info {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #F8EDE3;
+    color:#FFEAC5;
+}
+
+.why-join-section {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 50px; /* Adjusted margin-top to create a larger gap */
+}
+
+.why-join-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.why-join-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
