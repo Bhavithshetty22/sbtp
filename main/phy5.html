@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz on Newton's Laws</title>
+    <link rel="stylesheet" href="./physquiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1> Newton's Laws of Motion</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Which of the following laws of motion is related to inertia?</p>
+                <label><input type="radio" name="q1" value="a"> First law</label><br>
+                <label><input type="radio" name="q1" value="b"> Second law</label><br>
+                <label><input type="radio" name="q1" value="c"> Third law</label><br>
+                <label><input type="radio" name="q1" value="d"> Fourth law</label><br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Which law of Newton helps in finding the force on a body?</p>
+                <label><input type="radio" name="q2" value="a"> First law</label><br>
+                <label><input type="radio" name="q2" value="b"> Second law</label><br>
+                <label><input type="radio" name="q2" value="c"> Third law</label><br>
+                <label><input type="radio" name="q2" value="d"> Fourth law</label><br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Which law of Newton helps in finding the reaction forces on a body?</p>
+                <label><input type="radio" name="q3" value="a"> First law</label><br>
+                <label><input type="radio" name="q3" value="b"> Second law</label><br>
+                <label><input type="radio" name="q3" value="c"> Third law</label><br>
+                <label><input type="radio" name="q3" value="d"> Fourth law</label><br>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. The second law of motion, in mathematical form can be written as ____</p>
+                <label><input type="radio" name="q4" value="a"> F = dp/dt</label><br>
+                <label><input type="radio" name="q4" value="b"> F = ma</label><br>
+                <label><input type="radio" name="q4" value="c"> F = v(dm/dt)</label><br>
+                <label><input type="radio" name="q4" value="d"> F = mv</label><br>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. When we walk on a boat in still water, the boat will ______</p>
+                <label><input type="radio" name="q5" value="a"> Move ahead</label><br>
+                <label><input type="radio" name="q5" value="b"> Move backwards</label><br>
+                <label><input type="radio" name="q5" value="c"> Not move</label><br>
+                <label><input type="radio" name="q5" value="d"> Move sideways</label><br>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Which one of the following is not an example of the third law of motion?</p>
+                <label><input type="radio" name="q6" value="a"> Walking</label><br>
+                <label><input type="radio" name="q6" value="b"> Skiing</label><br>
+                <label><input type="radio" name="q6" value="c"> Walking on a boat</label><br>
+                <label><input type="radio" name="q6" value="d"> Cycling</label><br>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Which of the following is the correct formulation for the second law of motion?</p>
+                <label><input type="radio" name="q7" value="a"> F = m(dv/dt)</label><br>
+                <label><input type="radio" name="q7" value="b"> F = ma</label><br>
+                <label><input type="radio" name="q7" value="c"> F = v(dm/dt) + ma</label><br>
+                <label><input type="radio" name="q7" value="d"> F = mv²</label><br>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. When we walk on a boat in still water, the boat will ______</p>
+                <label><input type="radio" name="q8" value="a"> Move ahead</label><br>
+                <label><input type="radio" name="q8" value="b"> Move backwards</label><br>
+                <label><input type="radio" name="q8" value="c"> Not move</label><br>
+                <label><input type="radio" name="q8" value="d"> Move sideways</label><br>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Which one of the following is not an example of the third law of motion?</p>
+                <label><input type="radio" name="q9" value="a"> Walking</label><br>
+                <label><input type="radio" name="q9" value="b"> Skiing</label><br>
+                <label><input type="radio" name="q9" value="c"> Walking on a boat</label><br>
+                <label><input type="radio" name="q9" value="d"> Cycling</label><br>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Which law of Newton helps in finding the reaction forces on a body?</p>
+                <label><input type="radio" name="q10" value="a"> First law</label><br>
+                <label><input type="radio" name="q10" value="b"> Second law</label><br>
+                <label><input type="radio" name="q10" value="c"> Third law</label><br>
+                <label><input type="radio" name="q10" value="d"> Fourth law</label><br>
+            </div>
+
+            <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswers() {
+    let correctAnswers = {
+        q1: 'a',
+        q2: 'b',
+        q3: 'c',
+        q4: 'a',
+        q5: 'b',
+        q6: 'b',
+        q7: 'c',
+        q8: 'b',
+        q9: 'b',
+        q10: 'c'
+    };
+
+    let totalQuestions = 10;
+    let correct = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+            correct++;
+        }
+    }
+
+    document.getElementById("result").innerText = `You got ${correct} out of ${totalQuestions} correct!`;
+}
+
+    </script>
+</body>
+</html>

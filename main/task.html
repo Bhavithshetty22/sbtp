@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Dashboard</title>
+  <link rel="stylesheet" href="task.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../login/image1.png" alt="Logo" />
+    </div>
+  
+    <nav>
+      <ul>
+        <li><a href="./physicsmain.html">Physics</a></li>
+        <li><a href="./chemmain.html">Chemistry</a></li>
+        <li><a href="./mathsmain.html">Mathematics</a></li>
+        <li><a href="./pomo.html">Pomodoro</a></li>
+        <li><a href="./Main.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="switch">
+      <input type="checkbox" class="switch__input" id="darkModeToggle">
+      <label class="switch__label" for="darkModeToggle">
+        <span class="switch__indicator"></span>
+        <span class="switch__decoration"></span>
+      </label>
+    </div>
+  
+    <div class="action">
+      <div class="profile-circle" onclick="menuToggle();">
+          <img src="bhavith.jpeg" alt="">
+      </div>
+
+      <div class="menu" id="toggleMenu">
+          <ul class="list">
+            <li class="element">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#7e8590"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-pencil"
+              >
+                <path
+                  d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                ></path>
+                <path d="m15 5 4 4"></path>
+              </svg>
+              <a href="./profile.html">My Profile</a>
+            </li>
+            <li class="element">
+              <svg
+                class="lucide lucide-user-round-plus"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#7e8590"
+                fill="none"
+                viewBox="0 0 24 24"
+                height="24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 21a8 8 0 0 1 13.292-6"></path>
+                <circle r="5" cy="8" cx="10"></circle>
+                <path d="M19 16v6"></path>
+                <path d="M22 19h-6"></path>
+              </svg>
+              <a href="#">Add Friend</a>
+            </li>
+          </ul>
+          <div class="separator"></div>
+          <ul class="list">
+           
+            <li class="element">
+              <svg
+                class="lucide lucide-trash-2"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#7e8590"
+                fill="none"
+                viewBox="0 0 24 24"
+                height="24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3 6h18"></path>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                <line y2="17" y1="11" x2="10" x1="10"></line>
+                <line y2="17" y1="11" x2="14" x1="14"></line>
+              </svg>
+              <a href="../login/login.html">Logout</a>
+            </li>
+          </ul>
+          
+          
+        </div>
+      </div>
+  </header>
+  
+<main>
+  
+  <div class="container1">
+    <div class="text-center">
+     
+      <p id="quote" class="quote"></p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">
+          <h3>Add New Task</h3>
+          <p>Create a new study task</p>
+        </div>
+        <div class="card-content">
+          <div class="task-input-group">
+            <input type="text" id="newTask" class="input1" placeholder="Enter task description">
+            <select id="subjectSelect">
+              <option value="Math">Math</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Physics">Physics</option>
+            </select>
+            <button id="addTaskBtn" type="button" class="button">
+              <span class="button__text">Add Item</span>
+              <span class="button__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
+                  <line y2="19" y1="5" x2="12" x1="12"></line>
+                  <line y2="12" y1="12" x2="19" x1="5"></line>
+                </svg>
+              </span>
+            </button>
+          </div>          
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Progress Overview</h3>
+          <p>Your study task completion</p>
+        </div>
+        <div class="card-content">
+          <div class="progress-bar">
+            <div id="progress"></div>
+          </div>
+          <p id="progress-text" class="text-center"></p>
+        </div>
+      </div>
+    </div>
+      <div class="card task-list">
+        <div class="card-header">
+          <h3>Study To-Do List</h3>
+          <p>Manage your study tasks efficiently</p>
+        </div>
+        <div id="tasksContainer" class="card-content"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Tasks Completed Per Day</h3>
+          <p>Your study progress over the last 7 days</p>
+        </div>
+        <div class="card-content">
+          <canvas id="tasksChart"></canvas>
+        </div>
+      </div>
+      
+    </div>
+    </main>
+    <footer class="text-center">
+      <p>Remember to take regular breaks and stay hydrated!</p>
+      
+     
+    </footer>
+  
+
+  <script src="task.js"></script>
+  <script>
+     function menuToggle(){
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+    const toggleSwitch = document.getElementById('darkModeToggle');
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggleSwitch.checked = true;
+    }
+  
+    toggleSwitch.addEventListener('change', () => {
+      if (toggleSwitch.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+  
+</body>
+</html>
+
+
+
+
+
+

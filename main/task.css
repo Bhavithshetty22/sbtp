@@ -1,0 +1,869 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Anchor it to the top */
+  left: 0; /* Ensure it stretches across the entire width */
+  right: 0; /* Ensure it stretches across the entire width */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+
+header .logo img {
+  height: 50px;
+}
+
+
+main{
+  margin-right:70px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 8px;
+}
+
+nav ul li a:hover {
+  background-color: #eef2f6;
+  color: #007bff;
+}
+.profile-circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: 2px solid #007bff;
+}
+
+
+
+/* Progress Overview Section */
+.container1 {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Existing Quote Styles */
+.quote {
+  font-size: 1.1rem;
+  color: #777;
+  text-align: center;
+  margin: 40px 0 40px; /* Add top margin to create space below the header */
+  margin-top: calc(40px + 50px); /* Adjust according to your header height */
+}
+
+/* Other CSS styles remain unchanged */
+
+
+/* Dashboard Cards */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+#tasksChart {
+  width: 100%;
+  height: 300px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+#progress {
+  background-color: #4caf50;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+}
+
+/* Task List */
+.task-list {
+  grid-column: span 2;
+}
+
+.task-list h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.task-list ul {
+  list-style-type: none;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.task-list input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-list .task-text {
+  flex-grow: 1;
+}
+
+.task-list .task-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-list .delete-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.task-list .delete-btn:hover {
+  color: #c0392b;
+}
+
+/* Optional: Add some spacing between the checkbox and text */
+.task-list li > input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: underline;
+}
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+  border-radius: 20px; /* Make corners rounded */
+  overflow: hidden; /* Ensures child elements don’t overflow */
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+.task-input-group {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: flex-start; /* Align items to the start */
+  gap: 10px; /* Space between the elements */
+}
+
+.task-input-group input[type="text"] {
+  flex-grow: 2; /* Make the text input take more space */
+}
+
+.task-input-group select {
+  flex-grow: 1; /* Adjust the width of the select dropdown */
+}
+
+.task-input-group .button {
+  flex-grow: 0; /* The button should keep its original size */
+}
+/* From Uiverse.io by bociKond */ 
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+  user-select: none;
+  margin-right: 10px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  --clr: #0B6E4F;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: 300ms;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: var(--clr);
+  border-radius: .5rem;
+  animation: pulse 500ms ease-in-out;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #E0E0E2;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 #0B6E4F90;
+    rotate: 20deg;
+  }
+
+  50% {
+    rotate: -20deg;
+  }
+
+  75% {
+    box-shadow: 0 0 0 10px #0B6E4F60;
+  }
+
+  100% {
+    box-shadow: 0 0 0 13px #0B6E4F30;
+    rotate: 0;
+  }
+}
+.button1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button1:hover {
+  width: 140px;
+  border-radius: 50px;
+  background-color: rgb(255, 69, 69);
+}
+
+.button1:hover .svgIcon {
+  width: 50px;
+  transform: translateY(60%);
+}
+
+.button1::before {
+  position: absolute;
+  top: -20px;
+  content: "Delete";
+  color: white;
+  transition-duration: .3s;
+  font-size: 2px;
+}
+
+.button1:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+}
+.input1 {
+  width: 100%;
+  max-width: 220px; /* Adjust based on your layout */
+  height: 45px; /* Consistent height */
+  padding: 12px; /* Space inside the input */
+  border-radius: 12px; /* Rounded corners */
+  border: 1.5px solid lightgrey; /* Light grey border */
+  outline: none; /* No outline on focus */
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1); /* Smooth transition */
+  box-shadow: 0px 0px 20px -18px; /* Subtle shadow */
+}
+
+.input1:hover {
+  border: 2px solid lightgrey; /* Slightly darker border on hover */
+  box-shadow: 0px 0px 20px -17px; /* Shadow effect on hover */
+}
+
+.input1:active {
+  transform: scale(0.95); /* Scale down on click */
+}
+
+.input1:focus {
+  border: 2px solid grey; /* Darker border on focus */
+}
+#subjectSelect {
+  width: 100%; /* Make it take full width */
+  padding: 12px; /* Padding for better spacing */
+  border-radius: 12px; /* Rounded corners */
+  border: 1.5px solid lightgrey; /* Border color */
+  background-color: white; /* Background color */
+  outline: none; /* Remove default outline */
+  appearance: none; /* Remove default arrow */
+  position: relative; /* Positioning for custom arrow */
+  box-shadow: 0px 0px 20px -18px; /* Add a shadow effect */
+}
+#subjectSelect::after {
+  content: '▼'; /* Custom arrow */
+  position: absolute; /* Position it on the right */
+  right: 15px; /* Space from the right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust position */
+  pointer-events: none; /* Ignore clicks on the arrow */
+}
+#subjectSelect:focus {
+  border: 2px solid grey; /* Change border on focus */
+  box-shadow: 0 0 5px lightblue; /* Change shadow on focus */
+}
+/* Custom styles for the input box */
+
+.switch {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  margin-left: 140px;
+  
+  
+  
+}
+
+.switch__input {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.switch__label {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #2B2B2B;
+  border: 5px solid #5B5B5B;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
+}
+
+.switch__indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(-72%);
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #7B7B7B;
+  border-radius: 9999px;
+  box-shadow: 10px 0px 0 0 rgba(#000000, 0.2) inset;
+
+  &::before,
+  &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      background-color: #FFFFFF;
+      border-radius: 9999px;
+  }
+
+  &::before {
+      top: 7px;
+      left: 7px;
+      width: 9px;
+      height: 9px;
+      background-color: #FFFFFF;
+      opacity: 0.6;
+  }
+
+  &::after {
+      bottom: 8px;
+      right: 6px;
+      width: 14px;
+      height: 14px;
+      background-color: #FFFFFF;
+      opacity: 0.8;
+  }
+}
+
+.switch__decoration {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+  animation: twinkle 0.8s infinite -0.6s;
+
+  &::before,
+  &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #FFFFFF;
+      border-radius: 9999px;
+  }
+
+  &::before {
+      top: -20px;
+      left: 10px;
+      opacity: 1;
+      animation: twinkle 0.6s infinite;
+  }
+
+  &::after {
+      top: -7px;
+      left: 30px;
+      animation: twinkle 0.6s infinite -0.2s;
+  }
+}
+
+@keyframes twinkle {
+  50% { opacity: 0.2; }
+}
+
+.switch__indicator {
+  &,
+  &::before,
+  &::after {
+      transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
+  }
+}
+
+.switch__input:checked + .switch__label {
+  background-color: #8FB5F5;
+  border-color: #347CF8;
+
+  .switch__indicator {
+      background-color: #ECD21F;
+      box-shadow: none;
+      transform: translate(-50%, -50%) translateX(72%);
+
+      &::before,
+      &::after {
+          display: none;
+      }
+  }
+
+  .switch__decoration {
+      top: 50%;
+      transform: translate(0%, -50%);
+      animation: cloud 8s linear infinite;
+
+      width: 20px;
+      height: 20px;
+
+      &::before {
+          width: 10px;
+          height: 10px;
+          top: auto;
+          bottom: 0;
+          left: -8px;
+          animation: none;
+      }
+
+      &::after {
+          width: 15px;
+          height: 15px;
+          top: auto;
+          bottom: 0;
+          left: 16px;
+          animation: none;
+      }
+
+      &,
+      &::before,
+      &::after {
+          border-radius: 9999px 9999px 0 0;
+      }
+
+      &::after {
+          border-bottom-right-radius: 9999px;
+      }
+  }
+}
+
+@keyframes cloud {
+  0% {
+      transform: translate(0%, -50%);
+  }
+  50% {
+      transform: translate(-50%, -50%);
+  }
+  100% {
+      transform: translate(0%, -50%);
+  }
+}
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f5f5f5;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .card {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+body.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav ul li a:hover {
+  background-color: #333;
+  
+}
+
+body.dark-mode .progress-bar {
+  background-color: #444;
+}
+
+body.dark-mode #progress {
+  background-color: #3498db;
+}
+
+body.dark-mode .task-list li {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+body.dark-mode footer {
+  color: #999;
+}
+
+body.dark-mode .input1, body.dark-mode #subjectSelect {
+  background-color: #333;
+  color: #f5f5f5;
+  border: 1.5px solid #555;
+}
+
+body.dark-mode .logo img {
+  content: url('../login/image.png'); /* Switch to dark mode image */
+}
+
+.profile-circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures the image doesn't overflow the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #AAB396;
+}
+
+.profile-circle img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+.icons-size{
+  color: #333;
+  font-size: 14px;
+}
+.action{
+
+  right: 30px;
+  top:20px
+}
+.menu{
+  position: relative; /* Or absolute or fixed depending on your layout */
+  z-index: 10; /* Higher z-index */
+  width: 200px;
+  /* background-color: rgba(36, 40, 50, 1);
+background-image: linear-gradient(135deg, rgba(36, 40, 50, 1) 0%, rgba(36, 40, 50, 1) 40%, rgba(37, 28, 40, 1) 100%); */
+
+ background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+.menu .separator {
+  border-top: 1.5px solid #42434a;
+}
+.menu .list .element svg {
+  width: 19px;
+  height: 19px;
+  transition: all 0.3s ease-out;
+}
+.menu .list .element .label {
+  font-weight: 600;
+}
+
+.action .profile-circle{
+  border-radius: 50%;
+  cursor: pointer;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  width: 60px;
+}
+.action .profile-circle img{
+  width: 100%;
+  top:0;
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+  height: 100%;
+}
+.action .menu{
+  background-color:#FFF;
+  box-sizing:0 5px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 10px 20px;
+  position: absolute;
+  right: -10px;
+  width: 200px;
+  transition: 0.5s;
+  top: 120px;
+  visibility: hidden;
+  opacity: 0;
+}
+.action .menu.active{
+  opacity: 1;
+  top: 80px;
+  visibility: visible;
+}
+.action .menu::before{
+  background-color:#fff;
+  content: '';
+  height: 20px;
+  position: absolute;
+  right: 30px;
+  transform:rotate(45deg);
+  top:-5px;
+  width: 20px;
+}
+.action .menu h3{
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3em;
+  padding: 20px 0px;
+  text-align: left;
+  width: 100%;
+}
+.action .menu h3 div{
+  color: #818181;
+  font-size: 14px;
+  font-weight: 400;
+}
+.action .menu ul li{
+  align-items: center;
+  border-top:1px solid rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: left;
+  list-style: none;
+  padding: 10px 0px;
+  margin: 10px 0;
+}
+.action .menu ul li img{
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition:0.5s
+}
+.action .menu ul li a{
+  display: inline-block;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.action .menu ul li:hover img{
+  opacity: 1;
+}
+.action .menu ul li:hover a{
+  color:#007bff;
+}
+body.dark-mode .action .menu ul li:hover a{
+  color:#AAB396
+}
+body.dark-mode .action .menu{
+  background-color: rgba(36, 40, 50, 1);
+  background-image: linear-gradient(
+    139deg,
+    rgba(36, 40, 50, 1) 0%,
+    rgba(36, 40, 50, 1) 0%,
+    rgba(37, 28, 40, 1) 100%
+  );
+  border: #2B2B2B;
+}
+.action .menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+.action .menu ul li svg {
+  margin-right: 10px;
+}
+.menu.visible {
+  display: block;
+}

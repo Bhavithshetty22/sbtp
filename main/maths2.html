@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relations and Functions Quiz</title>
+    <link rel="stylesheet" href="./mathsquizz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Relations and Functions Quiz</h1>
+        <div id="quiz">
+            <div class="question">
+                <p>1. A relation is a subset of cartesian products.</p>
+                <label><input type="radio" name="q1" value="a"> True</label><br>
+                <label><input type="radio" name="q1" value="b"> False</label><br>
+            </div>
+            <div class="question">
+                <p>2. Let A={1,2,3,4,5} and R be a relation from A to A, R = {(x, y): y = x + 1}. Find the domain.</p>
+                <label><input type="radio" name="q2" value="a"> {1,2,3,4,5}</label><br>
+                <label><input type="radio" name="q2" value="b"> {2,3,4,5}</label><br>
+                <label><input type="radio" name="q2" value="c"> {1,2,3,4}</label><br>
+                <label><input type="radio" name="q2" value="d"> {1,2,3,4,5,6}</label><br>
+            </div>
+            <div class="question">
+                <p>3. Let A={1,2,3,4,5} and R be a relation from A to A, R = {(x, y): y = x + 1}. Find the codomain.</p>
+                <label><input type="radio" name="q3" value="a"> {1,2,3,4,5}</label><br>
+                <label><input type="radio" name="q3" value="b"> {2,3,4,5}</label><br>
+                <label><input type="radio" name="q3" value="c"> {1,2,3,4}</label><br>
+                <label><input type="radio" name="q3" value="d"> {1,2,3,4,5,6}</label><br>
+            </div>
+            <div class="question">
+                <p>4. Let A={1,2,3,4,5} and R be a relation from A to A, R = {(x, y): y = x + 1}. Find the range.</p>
+                <label><input type="radio" name="q4" value="a"> {1,2,3,4,5}</label><br>
+                <label><input type="radio" name="q4" value="b"> {2,3,4,5}</label><br>
+                <label><input type="radio" name="q4" value="c"> {1,2,3,4}</label><br>
+                <label><input type="radio" name="q4" value="d"> {1,2,3,4,5,6}</label><br>
+            </div>
+            <div class="question">
+                <p>5. If set A has 2 elements and set B has 4 elements then how many relations are possible?</p>
+                <label><input type="radio" name="q5" value="a"> 32</label><br>
+                <label><input type="radio" name="q5" value="b"> 128</label><br>
+                <label><input type="radio" name="q5" value="c"> 256</label><br>
+                <label><input type="radio" name="q5" value="d"> 64</label><br>
+            </div>
+            <div class="question">
+                <p>6. Is relation from set A to set B always equal to relation from set B to set A?</p>
+                <label><input type="radio" name="q6" value="a"> True</label><br>
+                <label><input type="radio" name="q6" value="b"> False</label><br>
+            </div>
+            <div class="question">
+                <p>7. If A={1,4,8,9} and B={1, 2, -1, -2, -3, 3,5} and R is a relation from set A to set B {(x, y): x=y²}. Find domain of the relation.</p>
+                <label><input type="radio" name="q7" value="a"> {1,4,9}</label><br>
+                <label><input type="radio" name="q7" value="b"> {-1,1, -2,2, -3,3}</label><br>
+                <label><input type="radio" name="q7" value="c"> {1,4,8,9}</label><br>
+                <label><input type="radio" name="q7" value="d"> {-1,1, -2,2, -3,3,5}</label><br>
+            </div>
+            <div class="question">
+                <p>8. If A={1,4,8,9} and B={1, 2, -1, -2, -3, 3,5} and R is a relation from set A to set B {(x, y): x=y²}. Find codomain of the relation.</p>
+                <label><input type="radio" name="q8" value="a"> {1,4,9}</label><br>
+                <label><input type="radio" name="q8" value="b"> {-1,1, -2,2, -3,3}</label><br>
+                <label><input type="radio" name="q8" value="c"> {1,4,8,9}</label><br>
+                <label><input type="radio" name="q8" value="d"> {-1,1, -2,2, -3,3,5}</label><br>
+            </div>
+            <div class="question">
+                <p>9. If A={1,4,8,9} and B={1, 2, -1, -2, -3, 3,5} and R is a relation from set A to set B {(x, y): x=y²}. Find range of the relation.</p>
+                <label><input type="radio" name="q9" value="a"> {1,4,9}</label><br>
+                <label><input type="radio" name="q9" value="b"> {-1,1, -2,2, -3,3}</label><br>
+                <label><input type="radio" name="q9" value="c"> {1,4,8,9}</label><br>
+                <label><input type="radio" name="q9" value="d"> {-1,1, -2,2, -3,3,5}</label><br>
+            </div>
+            <div class="question">
+                <p>10. Let A={1,2} and B={3,4}. Which of the following cannot be a relation from set A to set B?</p>
+                <label><input type="radio" name="q10" value="a"> {(1,1), (1,2), (1,3), (1,4)}</label><br>
+                <label><input type="radio" name="q10" value="b"> {(1,3), (1,4)}</label><br>
+                <label><input type="radio" name="q10" value="c"> {(2,3), (2,4)}</label><br>
+                <label><input type="radio" name="q10" value="d"> {(1,3), (1,4), (2,3), (2,4)}</label><br>
+            </div>
+            <div class="button-container">
+                <button id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function submitQuiz() {
+    const correctAnswers = {
+        q1: 'a',
+        q2: 'a',
+        q3: 'd',
+        q4: 'b',
+        q5: 'c',
+        q6: 'b',
+        q7: 'c',
+        q8: 'd',
+        q9: 'b',
+        q10: 'a'
+    };
+
+    let score = 0;
+
+    for (let i = 1; i <= 10; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer && answer.value === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    document.getElementById('result').textContent = `You got ${score} out of 10 correct.`;
+    const button = document.getElementById('submitBtn');
+            button.innerHTML = 'Go to Dashboard';
+            button.onclick = function() {
+                location.href = './mathsmain.html'; // Redirect to Dashboard
+            };
+}
+
+    </script>
+</body>
+</html>

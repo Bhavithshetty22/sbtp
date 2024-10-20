@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Analysis</title>
+  <link rel="stylesheet" href="ana.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.1.10/Recharts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Study Analysis</h1>
+
+    <div class="grid-container">
+      <div class="card">
+        <h2>Total Time Studied</h2>
+        <p id="total-time" class="highlight"></p>
+      </div>
+
+      <div class="card">
+        <h2>Average Time Studied</h2>
+        <p id="average-time" class="highlight"></p>
+      </div>
+    </div>
+
+    <div class="grid-container large">
+      <div class="card chart">
+        <h2>Weekly Study Time</h2>
+        <div id="weekly-chart" class="chart-container"></div>
+      </div>
+
+      <div class="subject-progress">
+        <div class="main_card">
+          <div class="background"></div>
+          <div class="cool_card_logo">
+            <p>Chemistry</p>
+          </div>
+          <div class="box box1">
+            <span class="icon"> 100% </span>
+          </div>
+          <div class="box box2">
+            <span class="icon"> 75%</span>
+          </div>
+          <div class="box box3">
+            <span class="icon"> 50% </span>
+          </div>
+          <div class="box box4">
+            <span class="icon"> 25% </span>
+          </div>
+        </div>
+        <div class="main_card">
+          <div class="background1"></div>
+          <div class="cool_card_logo">
+            <p>Physics</p>
+          </div>
+          <div class="box box1">
+            <span class="icon"> 100% </span>
+          </div>
+          <div class="box box2">
+            <span class="icon"> 75%</span>
+          </div>
+          <div class="box box3">
+            <span class="icon"> 50% </span>
+          </div>
+          <div class="box box4">
+            <span class="icon"> 25% </span>
+          </div>
+        </div>
+        <div class="main_card">
+          <div class="background2"></div>
+          <div class="cool_card_logo">
+            <p>Mathematics</p>
+          </div>
+          <div class="box box1">
+            <span class="icon"> 100% </span>
+          </div>
+          <div class="box box2">
+            <span class="icon"> 75%</span>
+          </div>
+          <div class="box box3">
+            <span class="icon"> 50% </span>
+          </div>
+          <div class="box box4">
+            <span class="icon"> 25% </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="card">
+        <h2>Chemistry Quiz Progress</h2>
+        <div id="chemistry-quiz-chart" class="chart-container"></div>
+      </div>
+
+      <div class="card">
+        <h2>Physics Quiz Progress</h2>
+        <div id="physics-quiz-chart" class="chart-container"></div>
+      </div>
+
+      <div class="card">
+        <h2>Mathematics Quiz Progress</h2>
+        <div id="math-quiz-chart" class="chart-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="ana.js"></script>
+</body>
+</html>

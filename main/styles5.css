@@ -1,0 +1,722 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+
+main{
+    margin-right:70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #eef2f6;
+    color: #007bff;
+}
+
+.profile-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image doesn't overflow the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #AAB396;
+}
+
+.profile-circle img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+.icons-size{
+    color: #333;
+    font-size: 14px;
+}
+.action{
+  
+    right: 30px;
+    top:20px
+}
+.menu{
+    position: relative; /* Or absolute or fixed depending on your layout */
+    z-index: 10; /* Higher z-index */
+    width: 200px;
+    /* background-color: rgba(36, 40, 50, 1);
+  background-image: linear-gradient(135deg, rgba(36, 40, 50, 1) 0%, rgba(36, 40, 50, 1) 40%, rgba(37, 28, 40, 1) 100%); */
+  
+   background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+.menu .separator {
+    border-top: 1.5px solid #42434a;
+  }
+  .menu .list .element svg {
+    width: 19px;
+    height: 19px;
+    transition: all 0.3s ease-out;
+  }
+  .menu .list .element .label {
+    font-weight: 600;
+  }
+ 
+.action .profile-circle{
+    border-radius: 50%;
+    cursor: pointer;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    width: 60px;
+}
+.action .profile-circle img{
+    width: 100%;
+    top:0;
+    position: absolute;
+    object-fit: cover;
+    left: 0;
+    height: 100%;
+}
+.action .menu{
+    background-color:#FFF;
+    box-sizing:0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 10px 20px;
+    position: absolute;
+    right: -10px;
+    width: 200px;
+    transition: 0.5s;
+    top: 120px;
+    visibility: hidden;
+    opacity: 0;
+}
+.action .menu.active{
+    opacity: 1;
+    top: 80px;
+    visibility: visible;
+}
+.action .menu::before{
+    background-color:#fff;
+    content: '';
+    height: 20px;
+    position: absolute;
+    right: 30px;
+    transform:rotate(45deg);
+    top:-5px;
+    width: 20px;
+}
+.action .menu h3{
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3em;
+    padding: 20px 0px;
+    text-align: left;
+    width: 100%;
+}
+.action .menu h3 div{
+    color: #818181;
+    font-size: 14px;
+    font-weight: 400;
+}
+.action .menu ul li{
+    align-items: center;
+    border-top:1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    padding: 10px 0px;
+    margin: 10px 0;
+}
+.action .menu ul li img{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition:0.5s
+}
+.action .menu ul li a{
+    display: inline-block;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.action .menu ul li:hover img{
+    opacity: 1;
+}
+.action .menu ul li:hover a{
+    color:#007bff;
+}
+body.dark-mode .action .menu ul li:hover a{
+    color:#AAB396
+}
+body.dark-mode .action .menu{
+    background-color: rgba(36, 40, 50, 1);
+    background-image: linear-gradient(
+      139deg,
+      rgba(36, 40, 50, 1) 0%,
+      rgba(36, 40, 50, 1) 0%,
+      rgba(37, 28, 40, 1) 100%
+    );
+    border: #2B2B2B;
+}
+.action .menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .action .menu ul li svg {
+    margin-right: 10px;
+  }
+  .menu.visible {
+    display: block;
+  }
+
+/* Sidebar */
+aside {
+    height:5500px;
+    width: 200px;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+aside ul li a:hover {
+    background-color: #f1f1f1;
+}
+  
+  main {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  
+  .course-chapters {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+  }
+ 
+  .chapter-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* 3 boxes per row */
+    box-sizing: border-box;
+  }
+  
+  .chapter-box h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+ 
+  h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+  
+.container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container1 {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+}
+  
+  
+  .container1 .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    --clr: #0B6E4F;
+    height: 1.3em;
+    width: 1.3em;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: 300ms;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Adds space between the checkbox and text */
+}
+.container1 .label-text {
+    font-size: 1rem; /* Adjust font size if needed */
+    
+}
+  
+  /* When the checkbox is checked, add a blue background */
+  .container1 input:checked ~ .checkmark {
+    background-color: var(--clr);
+    border-radius: .5rem;
+    animation: pulse 500ms ease-in-out;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container1 input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container1 .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid #E0E0E2;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 #0B6E4F90;
+      rotate: 20deg;
+    }
+  
+    50% {
+      rotate: -20deg;
+    }
+  
+    75% {
+      box-shadow: 0 0 0 10px #0B6E4F60;
+    }
+  
+    100% {
+      box-shadow: 0 0 0 13px #0B6E4F30;
+      rotate: 0;
+    }
+  }
+  
+  .switch {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    margin-left: 140px;
+    margin-bottom: 30px;
+    
+}
+
+.switch__input {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.switch__label {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background-color: #2B2B2B;
+    border: 5px solid #5B5B5B;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
+}
+
+.switch__indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(-72%);
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #7B7B7B;
+    border-radius: 9999px;
+    box-shadow: 10px 0px 0 0 rgba(#000000, 0.2) inset;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        background-color: #FFFFFF;
+        border-radius: 9999px;
+    }
+
+    &::before {
+        top: 7px;
+        left: 7px;
+        width: 9px;
+        height: 9px;
+        background-color: #FFFFFF;
+        opacity: 0.6;
+    }
+
+    &::after {
+        bottom: 8px;
+        right: 6px;
+        width: 14px;
+        height: 14px;
+        background-color: #FFFFFF;
+        opacity: 0.8;
+    }
+}
+
+.switch__decoration {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: #FFFFFF;
+    border-radius: 9999px;
+    animation: twinkle 0.8s infinite -0.6s;
+
+    &::before,
+    &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 5px;
+        height: 5px;
+        background-color: #FFFFFF;
+        border-radius: 9999px;
+    }
+
+    &::before {
+        top: -20px;
+        left: 10px;
+        opacity: 1;
+        animation: twinkle 0.6s infinite;
+    }
+
+    &::after {
+        top: -7px;
+        left: 30px;
+        animation: twinkle 0.6s infinite -0.2s;
+    }
+}
+
+@keyframes twinkle {
+    50% { opacity: 0.2; }
+}
+
+.switch__indicator {
+    &,
+    &::before,
+    &::after {
+        transition: all 0.4s cubic-bezier(.46,.03,.52,.96);
+    }
+}
+
+.switch__input:checked + .switch__label {
+    background-color: #8FB5F5;
+    border-color: #347CF8;
+
+    .switch__indicator {
+        background-color: #ECD21F;
+        box-shadow: none;
+        transform: translate(-50%, -50%) translateX(72%);
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+
+    .switch__decoration {
+        top: 50%;
+        transform: translate(0%, -50%);
+        animation: cloud 8s linear infinite;
+
+        width: 20px;
+        height: 20px;
+
+        &::before {
+            width: 10px;
+            height: 10px;
+            top: auto;
+            bottom: 0;
+            left: -8px;
+            animation: none;
+        }
+
+        &::after {
+            width: 15px;
+            height: 15px;
+            top: auto;
+            bottom: 0;
+            left: 16px;
+            animation: none;
+        }
+
+        &,
+        &::before,
+        &::after {
+            border-radius: 9999px 9999px 0 0;
+        }
+
+        &::after {
+            border-bottom-right-radius: 9999px;
+        }
+    }
+}
+
+@keyframes cloud {
+    0% {
+        transform: translate(0%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(0%, -50%);
+    }
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .course-chapters {
+    background-color: #121212; /* Match with body background */
+    color: #e0e0e0;
+    border: 1px solid #333;
+  }
+  
+  body.dark-mode .chapter-box {
+    background-color: #1e1e1e; /* Darker box background */
+    color: #e0e0e0;
+    border: 1px solid #333;
+  }
+ 
+  
+  body.dark-mode header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+  }
+  
+  body.dark-mode nav ul li a {
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode nav ul li a:hover {
+    background-color: #333;
+  }
+  
+  body.dark-mode aside {
+    background-color: #1e1e1e;
+    border-right: 1px solid #333;
+  }
+  
+  body.dark-mode aside ul li a {
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode aside ul li a:hover {
+    background-color: #333;
+  }
+  
+  /* Additional dark mode styling for hover effects */
+  body.dark-mode .checkbox-item input[type="checkbox"] + label:hover {
+    background-color: #333;
+    color: #e0e0e0;
+  }
+  body.dark-mode .logo img {
+    content: url('./image.png'); /* Switch to dark mode image */
+}
+body.dark-mode h3 {
+    color: #ffffff;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+button {
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #444444; 
+    color:#444444;
+    background-color: transparent; 
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s ease-in-out;
+}
+button:hover {
+    background-color: #444444;  /* Dark background on hover in light mode */
+    color: #ffffff;  /* White text on hover */
+}
+body.dark-mode button {
+    border: 2px solid #AAB396;
+    background: transparent;
+    color: #ffffff;
+    transition: color 0.5s ease-in-out;
+}
+
+body.dark-mode button:hover {
+    background-color: #AAB396;  /* Light background on hover in dark mode */
+    color: #444444;  /* Dark text on hover in dark mode */
+}
+/* Sidebar slide in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+aside ul li {
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+aside ul li:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+/* Course Chapters fade in and slide up effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-chapters {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Fade in animation for chapter boxes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.chapter-box {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Logo hover effect */
+header .logo img {
+    transition: transform 0.5s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Button hover effect */
+button {
+    transition: background-color 0.5s ease-in-out, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+body.dark-mode .logo img {
+    content: url('../login/image.png'); /* Switch to dark mode image */
+}

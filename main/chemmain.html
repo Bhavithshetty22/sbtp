@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Dashboard - Course Chapters</title>
+  <link rel="stylesheet" href="styles5.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="../login/image1.png" alt="Logo" />
+    </div>
+      <nav>
+          <ul>
+              <li><a href="./physicsmain.html">Physics</a></li>
+              <li><a href="./chemmain.html">Chemistry</a></li>
+              <li><a href="./mathsmain.html">Mathematics</a></li>
+              <li><a href="./pomo.html">Pomodoro</a></li>
+          </ul>
+      </nav>
+      
+      <div class="action">
+          <div class="profile-circle" onclick="menuToggle();">
+              <img src="bhavith.jpeg" alt="">
+          </div>
+  
+          <div class="action">
+            <div class="profile-circle" onclick="menuToggle();">
+                <img src="bhavith.jpeg" alt="">
+            </div>
+      
+            <div class="menu" id="toggleMenu">
+                <ul class="list">
+                  <li class="element">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#7e8590"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-pencil"
+                    >
+                      <path
+                        d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                      ></path>
+                      <path d="m15 5 4 4"></path>
+                    </svg>
+                    <a href="./profile.html">My Profile</a>
+                  </li>
+                  <li class="element">
+                    <svg
+                      class="lucide lucide-user-round-plus"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      stroke-width="2"
+                      stroke="#7e8590"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2 21a8 8 0 0 1 13.292-6"></path>
+                      <circle r="5" cy="8" cx="10"></circle>
+                      <path d="M19 16v6"></path>
+                      <path d="M22 19h-6"></path>
+                    </svg>
+                    <a href="#">Add Friend</a>
+                  </li>
+                </ul>
+                <div class="separator"></div>
+                <ul class="list">
+                 
+                  <li class="element">
+                    <svg
+                      class="lucide lucide-trash-2"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      stroke-width="2"
+                      stroke="#7e8590"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M3 6h18"></path>
+                      <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                      <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                      <line y2="17" y1="11" x2="10" x1="10"></line>
+                      <line y2="17" y1="11" x2="14" x1="14"></line>
+                    </svg>
+                    <a href="../login/login.html">Logout</a>
+                  </li>
+                </ul>
+                
+                
+              </div>
+            </div>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside>
+    <ul>
+        <li><a href="./Main.html">Dashboard</a></li>
+       
+        <li><a href="./ana.html">Analytics</a></li>
+        <li><a href="#">Add Friends</a></li>
+        <li><a href="./task.html">To Do List</a></li>
+    </ul>
+</aside>
+
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Welcome Section -->
+    <section class="welcome">
+        
+        <div class="switch">
+            <input type="checkbox" class="switch__input" id="Switch">
+            <label class="switch__label" for="Switch">
+                <span class="switch__indicator"></span>
+                <span class="switch__decoration"></span>
+            </label>
+        </div>
+    </section>
+    
+    <!-- Course Chapters Section -->
+    <section class="course-chapters">
+      <h1>Course Chapters</h1>
+      <div class="container">
+        <!-- Chapter 1 -->
+        <div class="chapter-box">
+          <h3>Chapter 1: Some Basic Concepts of Chemistry</h3>
+          <label class="container1">
+            <input type="checkbox" id="chapter1-1" checked="checked">
+            <span class="checkmark"></span>
+            <span class="label-text">1. Law of Chemical Combination</span>
+          </label>
+    
+          <label class="container1">
+            <input type="checkbox" id="chapter1-2">
+            <span class="checkmark"></span>
+            <span class="label-text">2. Dalton's Atomic Theory</span>
+          </label>
+    
+          <label class="container1">
+            <input type="checkbox" id="chapter1-3">
+            <span class="checkmark"></span>
+            <span class="label-text">3. Empirical Formula</span>
+          </label>
+    
+          <label class="container1">
+            <input type="checkbox" id="chapter1-4">
+            <span class="checkmark"></span>
+            <span class="label-text">4. Mole Concept</span>
+          </label>
+    
+          <label class="container1">
+            <input type="checkbox" id="chapter1-5">
+            <span class="checkmark"></span>
+            <span class="label-text">5. Stoichiometry</span>
+          </label>
+    
+          <div class="button-container">
+            <button type="button" onclick="location.href='./chem1.html'"><span></span> QUIZ</button>
+          </div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="chapter-box">
+          <h3>Chapter 2: Introduction to Analytical Chemistry</h3>
+        
+          <label class="container1">
+            <input type="checkbox" id="chapter2-1">
+            <span class="checkmark"></span>
+            <span class="label-text">1. Bohr Model of the Atom</span>
+          </label>
+        
+          <label class="container1">
+            <input type="checkbox" id="chapter2-2">
+            <span class="checkmark"></span>
+            <span class="label-text">2. Subatomic Particles</span>
+          </label>
+        
+          <label class="container1">
+            <input type="checkbox" id="chapter2-3">
+            <span class="checkmark"></span>
+            <span class="label-text">3. Electromagnetic Radiation</span>
+          </label>
+        
+          <label class="container1">
+            <input type="checkbox" id="chapter2-4">
+            <span class="checkmark"></span>
+            <span class="label-text">4. Quantum Mechanics</span>
+          </label>
+        
+          <label class="container1">
+            <input type="checkbox" id="chapter2-5">
+            <span class="checkmark"></span>
+            <span class="label-text">5. Electron Configurations</span>
+          </label>
+        
+          <div class="button-container">
+            <button type="button" onclick="location.href='./chem2.html'"><span></span> QUIZ</button>
+          </div>
+        </div>
+        
+
+        <!-- Repeat for Chapters 3 to 6 -->
+        <div class="chapter-box">
+          <h3>Chapter 3: Basic Analytical Techniques</h3>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">1. Elements</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">2. Electron Gain Enthalpy</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">3. Metallic and Non-Metallic Character</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">4. Modern Periodic Table</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">5. Atomic Radius</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">6. Electronegativity and Oxidation State</span>
+          </label>
+          <div class="button-container">
+            <button type="button" onclick="location.href='./chem3.html'"><span></span> QUIZZZ</button>
+          </div>
+        </div>
+        
+
+        <div class="chapter-box">
+          <h3>Chapter 4: Structure of Atom</h3>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">1. Bond Parameters</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">2. Covalent Compounds</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">3. Hybridisation</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">4. Hydrogen Bonding</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">5. Ionic or Electrovalent Compounds</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">6. Molecular Orbital Theory</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">7. Polarity of Bonds</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">8. Resonance Structures</span>
+          </label>
+          <div class="button-container">
+            <button type="button" onclick="location.href='./chem4.html'"><span></span> QUIZZZ</button>
+          </div>
+        </div>
+        
+
+        <div class="chapter-box">
+          <h3>Chapter 5: Chemical Bonding</h3>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">1. Compressibility</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">2. Diffusion</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">3. Density</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">4. Internal energy</span>
+          </label>
+          <label class="container1">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="label-text">5. Vapor pressure</span>
+          </label>
+          <div class="button-container">
+            <button type="button" onclick="location.href='./chem5.html'"><span></span> QUIZZZ</button>
+          </div>
+        </div>
+        
+        
+
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    function menuToggle(){
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+    const toggleSwitch = document.getElementById('Switch');
+    const body = document.body;
+
+    // Load dark mode state from localStorage if exists
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      toggleSwitch.checked = true;
+    }
+
+    // Event listener to toggle dark mode
+    toggleSwitch.addEventListener('change', function() {
+      if (toggleSwitch.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark'); // Save the dark mode state
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light'); // Save the light mode state
+      }
+    });
+  </script>
+</body>
+</html>

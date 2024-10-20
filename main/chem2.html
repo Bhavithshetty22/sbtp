@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure of Atom Quiz</title>
+    <link rel="stylesheet" href="chemquiz.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>Structure of Atom</h1>
+        <div id="quiz">
+            <div class="question">
+                <p>1. What is the absolute charge of a proton?</p>
+                <label><input type="radio" name="q1" value="a"> +1.602176×10<sup>-27</sup></label><br>
+                <label><input type="radio" name="q1" value="b"> –1.602176×10<sup>-19</sup></label><br>
+                <label><input type="radio" name="q1" value="c"> +1.602176×10<sup>-19</sup></label><br>
+                <label><input type="radio" name="q1" value="d"> –1.602176×10<sup>-27</sup></label><br>
+            </div>
+            <div class="question">
+                <p>2. Which of the following models are not the same as Thomson Model of Atom?</p>
+                <label><input type="radio" name="q2" value="a"> Plum pudding model</label><br>
+                <label><input type="radio" name="q2" value="b"> Watermelon model</label><br>
+                <label><input type="radio" name="q2" value="c"> Raisin pudding model</label><br>
+                <label><input type="radio" name="q2" value="d"> Nuclear model</label><br>
+            </div>
+            <div class="question">
+                <p>3. Elements do emit radiation on their own and this property is known as _____</p>
+                <label><input type="radio" name="q3" value="a"> Radioactivity</label><br>
+                <label><input type="radio" name="q3" value="b"> Refraction</label><br>
+                <label><input type="radio" name="q3" value="c"> Absorption</label><br>
+                <label><input type="radio" name="q3" value="d"> Adsorption</label><br>
+            </div>
+            <div class="question">
+                <p>4. Which of the following statements you think is wrong regarding α particle scattering effect?</p>
+                <label><input type="radio" name="q4" value="a"> α particles mostly move through the gold foil having
+                    zero deflection</label><br>
+                <label><input type="radio" name="q4" value="b"> A small fraction are deflected</label><br>
+                <label><input type="radio" name="q4" value="c"> One in Twenty Thousand turns 180°</label><br>
+                <label><input type="radio" name="q4" value="d"> The thickness of the gold foil is about
+                    100μm</label><br>
+            </div>
+            <div class="question">
+                <p>5. If the number of protons and neutrons of an element is 13 and 14 respectively, then what’s the
+                    atomic number(Z) and mass number(A)?</p>
+                <label><input type="radio" name="q5" value="a"> 13, 13</label><br>
+                <label><input type="radio" name="q5" value="b"> 13, 27</label><br>
+                <label><input type="radio" name="q5" value="c"> 14, 13</label><br>
+                <label><input type="radio" name="q5" value="d"> 27, 14</label><br>
+            </div>
+            <div class="question">
+                <p>6. Which of the following is not an isotope of hydrogen?</p>
+                <label><input type="radio" name="q6" value="a"> Protium</label><br>
+                <label><input type="radio" name="q6" value="b"> Deuterium</label><br>
+                <label><input type="radio" name="q6" value="c"> Tritium</label><br>
+                <label><input type="radio" name="q6" value="d"> Helium</label><br>
+            </div>
+            <div class="question">
+                <p>7. Chemical properties of an atom are dependent on a number of electrons in that particular atom.</p>
+                <label><input type="radio" name="q7" value="a"> True</label><br>
+                <label><input type="radio" name="q7" value="b"> False</label><br>
+            </div>
+            <div class="question">
+                <p>8. Find out the number of neutrons, protons, and electrons of <sup>17</sup>Cl<sub>37</sub>
+                    respectively.</p>
+                <label><input type="radio" name="q8" value="a"> 20, 20, 17</label><br>
+                <label><input type="radio" name="q8" value="b"> 17, 17, 20</label><br>
+                <label><input type="radio" name="q8" value="c"> 20, 17, 17</label><br>
+                <label><input type="radio" name="q8" value="d"> 17, 17, 17</label><br>
+            </div>
+            <div class="question">
+                <p>9. Pick out the isobar of <sup>18</sup>Ar<sub>40</sub>.</p>
+                <label><input type="radio" name="q9" value="a"> <sup>12</sup>Mg<sub>24</sub></label><br>
+                <label><input type="radio" name="q9" value="b"> <sup>26</sup>Fe<sub>58</sub></label><br>
+                <label><input type="radio" name="q9" value="c"> <sup>19</sup>K<sub>40</sub></label><br>
+                <label><input type="radio" name="q9" value="d"> <sup>28</sup>Ni<sub>64</sub></label><br>
+            </div>
+            <div class="question">
+                <p>10. Gravitational force = Gm<sub>1</sub>m<sub>2</sub>/r<sup>2</sup>.</p>
+                <label><input type="radio" name="q10" value="a"> True</label><br>
+                <label><input type="radio" name="q10" value="b"> False</label><br>
+            </div>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function submitQuiz() {
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'd',
+                q3: 'a',
+                q4: 'd',
+                q5: 'b',
+                q6: 'd',
+                q7: 'a',
+                q8: 'c',
+                q9: 'c',
+                q10: 'a'
+            };
+
+            let score = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let question in correctAnswers) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').textContent = `You got ${score} out of ${totalQuestions} correct.`;
+        }
+    </script>
+</body>
+
+</html>
