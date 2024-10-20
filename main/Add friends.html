@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V-Study - Add Friends</title>
+  <link rel="stylesheet" href="./Addfriends.css">
+</head>
+<body>
+  <div class="min-h-screen bg-gray-100">
+    <header>
+        <div class="logo">
+            <img src="./2097134.webp" alt="Logo">
+        <img id="title" src="./image1.png"/>
+        </div>
+        <div class="switch">
+            <input type="checkbox" class="switch__input" id="Switch">
+            <label class="switch__label" for="Switch">
+                <span class="switch__indicator"></span>
+                <span class="switch__decoration"></span>
+            </label>
+        </div>
+        <nav>
+            <ul>
+                
+                <li><a href="./Main.html">Dashboard</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        
+      <div class="px-4 py-6 sm:px-0">
+        <div class="card">
+          <div class="card-header">
+            <h3>Find Friends</h3>
+            <p>Search for other V-Study users to add as friends</p>
+          </div>
+          <div class="card-content">
+            <form id="searchForm" class="flex space-x-2">
+              <input type="text" id="searchInput" placeholder="Search by name or username" class="input flex-grow">
+              <button type="submit" class="button">
+                <img src="./search.jpg" alt="Search" class="icon mr-2"> 
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="card">
+            <div class="card-header">
+              <h3>Suggested Friends</h3>
+              <p>People you might know on V-Study</p>
+            </div>
+            <div class="card-content">
+              <ul class="space-y-4" id="suggestedFriendsList">
+                <!-- Suggested friends will be dynamically inserted here -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Friend Requests</h3>
+              <p>People who want to connect with you</p>
+            </div>
+            <div class="card-content">
+              <ul class="space-y-4" id="friendRequestsList">
+                <!-- Friend requests will be dynamically inserted here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./friends.js"></script>
+  <script>
+    const toggleSwitch = document.getElementById('Switch');
+    const body = document.body;
+
+    // Load dark mode state from localStorage if exists
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+        toggleSwitch.checked = true;
+    }
+
+    // Event listener to toggle dark mode
+    toggleSwitch.addEventListener('change', function() {
+        if (toggleSwitch.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark'); // Save the dark mode state
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light'); // Save the light mode state
+        }
+    });
+    // Sliding motion logic for course cards
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.course-card');
+    const courseCardWrapper = document.getElementById('courseCardWrapper');
+    
+    function moveSlides() {
+        currentSlide = (currentSlide + 1) % slides.length; // Loop back after last slide
+        const slideWidth = slides[0].clientWidth;
+        courseCardWrapper.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    // Move slides every 4.5 seconds
+    setInterval(moveSlides, 3500);
+</script>
+</body>
+</html>
