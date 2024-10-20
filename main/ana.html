@@ -12,7 +12,33 @@
       padding: 0;
       color: #333;
     }
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    animation: slideDown 1.5s ease-in-out; /* Slide-down animation */
+}
+    nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
 
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition for color and scale */
+    display: inline-block; /* Needed for scaling effect */
+    position: relative;
+    border: 5px solid black;
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 1050px;
+    
+}
     .container {
       max-width: 1200px;
       margin: auto;
@@ -222,6 +248,16 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+          
+          <li><a href="./Main.html">Dashboard</a></li>
+          
+          
+      </ul>
+  </nav>
+  </header>
   <div class="container">
     <h1 class="title">Study Analysis</h1>
 
