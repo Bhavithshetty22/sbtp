@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion in Plain</title>
+    <style>
+        /* Container for quiz */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1f2b;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            width: 400px;
+            margin: 0 auto;
+            perspective: 1000px;
+            /* Perspective to enable 3D effect */
+        }
+
+        /* Card containing question and answer */
+        .card {
+            width: 100%;
+            height: 290px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            border-radius: 15px;
+            /* Rounded corners */
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and back of the card */
+        .question,
+        .answer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 15px;
+            /* Rounded corners */
+        }
+
+        .question {
+            background-color: #151720;
+        }
+
+        .answer {
+            background-color: #151720;
+            transform: rotateY(180deg);
+        }
+
+        /* Aligning radio buttons and answers side by side */
+        label {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .question p {
+            margin-bottom: 20px;
+        }
+
+        /* Buttons styling */
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            /* Green background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            /* Rounded buttons */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Result section */
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20px;
+            /* Increased font size for results */
+            color: #28a745;
+            /* Green color for result */
+        }
+
+        #backToDashboard {
+            display: none;
+            /* Hidden by default */
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>Motion in Plain</h1>
+
+        <!-- Question 1 -->
+        <div class="card" id="card1">
+            <div class="question" id="question1">
+                <p>1. How many variables are required to define the motion of a body in a plane?</p>
+                <label><input type="radio" name="q1" value="a"> a) 1</label>
+                <label><input type="radio" name="q1" value="b"> b) 2</label>
+                <label><input type="radio" name="q1" value="c"> c) 3</label>
+                <label><input type="radio" name="q1" value="d"> d) 4</label>
+                <button type="button" onclick="submitAnswer(1)">Submit</button>
+            </div>
+            <div class="answer" id="answer1">
+                <p id="feedback1"></p>
+                <button onclick="nextQuestion(2)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="card" id="card2" style="display: none;">
+            <div class="question" id="question2">
+                <p>2. A body is exhibiting circular motion. What kind of motion can this be termed as?</p>
+                <label><input type="radio" name="q2" value="a"> a) Motion along a line</label>
+                <label><input type="radio" name="q2" value="b"> b) Motion in a plane</label>
+                <label><input type="radio" name="q2" value="c"> c) Motion in space</label>
+                <label><input type="radio" name="q2" value="d"> d) Motion along a point</label>
+                <button type="button" onclick="submitAnswer(2)">Submit</button>
+            </div>
+            <div class="answer" id="answer2">
+                <p id="feedback2"></p>
+                <button onclick="nextQuestion(3)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="card" id="card3" style="display: none;">
+            <div class="question" id="question3">
+                <p>3. Which of the following is not an example of motion in a plane?</p>
+                <label><input type="radio" name="q3" value="a"> a) A car moving in a rectangular path</label>
+                <label><input type="radio" name="q3" value="b"> b) A bicycle moving in a circular path</label>
+                <label><input type="radio" name="q3" value="c"> c) A rocket moving into space</label>
+                <label><input type="radio" name="q3" value="d"> d) A truck moving in an infinite spiral</label>
+                <button type="button" onclick="submitAnswer(3)">Submit</button>
+            </div>
+            <div class="answer" id="answer3">
+                <p id="feedback3"></p>
+                <button onclick="nextQuestion(4)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="card" id="card4" style="display: none;">
+            <div class="question" id="question4">
+                <p>4. In how many independent directions can a vector in a plane be resolved?</p>
+                <label><input type="radio" name="q4" value="a"> a) 1</label>
+                <label><input type="radio" name="q4" value="b"> b) 2</label>
+                <label><input type="radio" name="q4" value="c"> c) 3</label>
+                <label><input type="radio" name="q4" value="d"> d) 4</label>
+                <button type="button" onclick="submitAnswer(4)">Submit</button>
+            </div>
+            <div class="answer" id="answer4">
+                <p id="feedback4"></p>
+                <button onclick="nextQuestion(5)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="card" id="card5" style="display: none;">
+            <div class="question" id="question5">
+                <p>5. Which of the following is not true about projectile motion?</p>
+                <label><input type="radio" name="q5" value="a"> a) It is an example of motion in a plane</label>
+                <label><input type="radio" name="q5" value="b"> b) It is an example of motion along a curve</label>
+                <label><input type="radio" name="q5" value="c"> c) It is not an example of motion in space</label>
+                <label><input type="radio" name="q5" value="d"> d) The acceleration keeps changing in projectile motion</label>
+                <button type="button" onclick="submitAnswer(5)">Submit</button>
+            </div>
+            <div class="answer" id="answer5">
+                <p id="feedback5"></p>
+                <button onclick="nextQuestion(6)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="card" id="card6" style="display: none;">
+            <div class="question" id="question6">
+                <p>6. Which of the following is not an example of motion in a plane?</p>
+                <label><input type="radio" name="q6" value="a"> a) A car moving in a rectangular path</label>
+                <label><input type="radio" name="q6" value="b"> b) A bicycle moving in a circular path</label>
+                <label><input type="radio" name="q6" value="c"> c) A rocket moving into space</label>
+                <label><input type="radio" name="q6" value="d"> d) A truck moving in an infinite spiral</label>
+                <button type="button" onclick="submitAnswer(6)">Submit</button>
+            </div>
+            <div class="answer" id="answer6">
+                <p id="feedback6"></p>
+                <button onclick="nextQuestion(7)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="card" id="card7" style="display: none;">
+            <div class="question" id="question7">
+                <p>7. A body is exhibiting circular motion. What kind of motion can this be termed as?</p>
+                <label><input type="radio" name="q7" value="a"> a) Motion along a line</label>
+                <label><input type="radio" name="q7" value="b"> b) Motion in a plane</label>
+                <label><input type="radio" name="q7" value="c"> c) Motion in space</label>
+                <label><input type="radio" name="q7" value="d"> d) Motion along a point</label>
+                <button type="button" onclick="submitAnswer(7)">Submit</button>
+            </div>
+            <div class="answer" id="answer7">
+                <p id="feedback7"></p>
+                <button onclick="nextQuestion(8)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="card" id="card8" style="display: none;">
+            <div class="question" id="question8">
+                <p>8. In how many independent directions can a vector in a plane be resolved?</p>
+                <label><input type="radio" name="q8" value="a"> a) 1</label>
+                <label><input type="radio" name="q8" value="b"> b) 2</label>
+                <label><input type="radio" name="q8" value="c"> c) 3</label>
+                <label><input type="radio" name="q8" value="d"> d) 4</label>
+                <button type="button" onclick="submitAnswer(8)">Submit</button>
+            </div>
+            <div class="answer" id="answer8">
+                <p id="feedback8"></p>
+                <button onclick="nextQuestion(9)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="card" id="card9" style="display: none;">
+            <div class="question" id="question9">
+                <p>9. How many variables are required to define the motion of a body in a plane?</p>
+                <label><input type="radio" name="q9" value="a"> a) 1</label>
+                <label><input type="radio" name="q9" value="b"> b) 2</label>
+                <label><input type="radio" name="q9" value="c"> c) 3</label>
+                <label><input type="radio" name="q9" value="d"> d) 4</label>
+                <button type="button" onclick="submitAnswer(9)">Submit</button>
+            </div>
+            <div class="answer" id="answer9">
+                <p id="feedback9"></p>
+                <button onclick="nextQuestion(10)">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="card" id="card10" style="display: none;">
+            <div class="question" id="question10">
+                <p>10. Which of the following is not true about projectile motion?</p>
+                <label><input type="radio" name="q10" value="a"> a) It is an example of motion in a plane</label>
+                <label><input type="radio" name="q10" value="b"> b) It is an example of motion along a curve</label>
+                <label><input type="radio" name="q10" value="c"> c) It is not an example of motion in space</label>
+                <label><input type="radio" name="q10" value="d"> d) The acceleration keeps changing in projectile motion</label>
+                <button type="button" onclick="submitAnswer(10)">Submit</button>
+            </div>
+            <div class="answer" id="answer10">
+                <p id="feedback10"></p>
+                <button onclick="finishQuiz()">Finish Quiz</button>
+            </div>
+        </div>
+        
+        <div id="result"></div>
+        <button id="backToDashboard" style="display: none;" onclick="goToDashboard()">Back to Dashboard</button>
+        
+        </div>
+    </div>
+    
+    <script>
+        let currentQuestion = 1;
+        let score = 0;
+
+        const answers = {
+            q1: 'b',
+        q2: 'b',
+        q3: 'c',
+        q4: 'b',
+        q5: 'd',
+        q6: 'c',
+        q7: 'b',
+        q8: 'a',
+        q9: 'b',
+        q10: 'd'
+        };
+
+        function submitAnswer(questionNumber) {
+            const selectedOption = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+            const feedbackElement = document.getElementById(`feedback${questionNumber}`);
+            if (selectedOption) {
+                const answer = selectedOption.value;
+                if (answer === answers[questionNumber]) {
+                    score++;
+                    feedbackElement.innerText = "Correct!";
+                } else {
+                    feedbackElement.innerText = "Incorrect.";
+                }
+                document.getElementById(`question${questionNumber}`).style.display = 'none';
+                document.getElementById(`answer${questionNumber}`).style.display = 'flex';
+                document.getElementById(`card${questionNumber}`).classList.add('flipped');
+            }
+            else {
+                alert("Please select an answer.");
+            }
+        }
+
+        function nextQuestion(questionNumber) {
+            if (questionNumber <= 10) {
+                document.getElementById(`card${questionNumber - 1}`).style.display = 'none';
+                document.getElementById(`card${questionNumber}`).style.display = 'block';
+                document.getElementById(`card${questionNumber}`).classList.remove('flipped');
+                document.getElementById(`question${questionNumber}`).style.display = 'flex';
+                currentQuestion = questionNumber;  // Update the current question
+            }
+        }
+
+        function finishQuiz() {
+            document.getElementById(`card${currentQuestion}`).style.display = 'none';
+
+            // Show the result
+            const result = document.getElementById('result');
+            result.innerHTML = `Your score is ${score} out of 10.`;
+            document.getElementById('backToDashboard').style.display = 'block';
+        }
+        function goToDashboard() {
+            window.location.href = 'Main.html'; // Replace with the actual dashboard URL
+        }
+    </script>
+</body>
+
+</html>
