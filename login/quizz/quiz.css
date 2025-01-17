@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(226, 186, 137);
+    background: radial-gradient(circle, rgba(226, 186, 137, 1) 0%, rgba(252, 243, 229, 1) 100%);
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    height: 550px;
+    width: 1000px;
+    position: relative;
+}
+
+.button2 {
+    padding: 10px 35px;
+    border: unset;
+    border-radius: 8px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: 1000;
+    font-size: 14px;
+    transition: all 250ms;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.button2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+.button2:hover {
+    color: #e8e8e8;
+}
+
+.button2:hover::before {
+    width: 100%;
+}
+
+.text-muted {
+    color: #777;
+    margin-top: 20px;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-medium {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.box {
+    width: 600px;
+    margin-bottom: 60px;
+}
+
+#radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.radio-option input {
+    margin-right: 1rem;
+}
+
+.radio-option:hover {
+    background-color: #f0f0f0;
+}
+
+.radio-option input:checked+label {
+    font-weight: bold;
+    color: #594A3C;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.page-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0.1, 0.1, 0.1, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.page-btn1,.page-btn2 {
+    width: 4.5rem;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0.1, 0.1, 0.1, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+}
+
+.page-btn1:hover,.page-btn2:hover {
+    background-color: #f0f0f0;
+}
+
+.page-btn1.active {
+    background-color: #594A3C;
+    color: white;
+}
+
+.page-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.page-btn.active {
+    background-color: #212121;
+    color: white;
+}
+
+.timer {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.content a img {
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(138, 115, 85, 0.3);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+}
+
+.back-link:hover {
+    background-color: rgba(139, 115, 85, 0.2);
+}
+
+.back-link svg {
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.card .time_rem h2 {
+    font-size: 15px;
+    margin-left: 39px;
+    margin-top: 40px;
+    color: #777;
+}
+
+.page-btn.active {
+    background-color: brown;
+    color: white;
+}
+/* ye bhavith ka progress bar */
+@keyframes progress {
+    0% { --percentage: 0; }
+    100% { --percentage: var(--value); }
+}
+
+@property --percentage {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+div[role="progressbar"] {
+    --percentage: var(--value);
+    --primary: #369;
+    --secondary: #adf;
+    --size: 150px;
+    animation: progress 2s 0.5s forwards;
+    width: var(--size);
+    aspect-ratio: 1;
+    
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+div[role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+    mask: radial-gradient(white 55%, transparent 0);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(#0000 55%, #000 0);
+    -webkit-mask-mode: alpha;
+}
+
+div[role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/* ye mera progress bar */
+.timer-container {
+    text-align: left;
+    margin-top: 30px;
+  }
+  
+  #progress-bar {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+  }
+  
+  #progress-bar::-webkit-progress-bar {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+  }
+  
+  #progress-bar::-webkit-progress-value {
+    background-color: rgb(65, 35, 35);
+    border-radius: 5px;
+  }
